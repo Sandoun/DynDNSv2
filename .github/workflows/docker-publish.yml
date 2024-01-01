@@ -34,7 +34,7 @@ jobs:
         with:
           context: ${{ github.workspace }}/src
           file: ${{ github.workspace }}/src/DynDNSv2/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm
+          platforms: linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
