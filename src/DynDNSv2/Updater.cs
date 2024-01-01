@@ -63,7 +63,7 @@ internal class Updater : BackgroundService
         int i = 1;
         while(true)
         {
-            var found = Environment.GetEnvironmentVariable($"UPDATE_URL_{i}");
+            var found = Environment.GetEnvironmentVariable($"UPDATE_DOMAIN_{i}");
 
             if(!string.IsNullOrEmpty(found))
             {
@@ -78,7 +78,7 @@ internal class Updater : BackgroundService
         }
 
         if(updateLst.Count <= 0)
-            throw new Exception("No UPDATE_URL_[N] env variable found, pleace specify one with UPDATE_URL_1, UPDATE_URL_2 ...");
+            throw new Exception("No UPDATE_DOMAIN_[N] env variable found, pleace specify one with UPDATE_DOMAIN_1, UPDATE_DOMAIN_2 ...");
 
         updateDomains = updateLst.ToArray();
 
