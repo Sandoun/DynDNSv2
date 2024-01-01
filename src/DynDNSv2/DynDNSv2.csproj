@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	<!--<ContainerFamily>alpine</ContainerFamily>-->
     <UserSecretsId>abe55787-bc11-416d-85aa-eaf544f21fe1</UserSecretsId>
   </PropertyGroup>
 

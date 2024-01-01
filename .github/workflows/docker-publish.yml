@@ -39,7 +39,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ${{ github.workspace }}/src
-          file: ${{ github.workspace }}/src/DynDNSv2/Dockerfile
+          file: ${{ github.workspace }}/src/DynDNSv2/MultiBuild.Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
