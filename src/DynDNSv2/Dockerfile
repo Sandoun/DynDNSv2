@@ -7,8 +7,8 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["DynDNSv2/DynDNSv2.csproj", "DynDNSv2/"]
-RUN dotnet restore "./DynDNSv2/./DynDNSv2.csproj"
+COPY ["./DynDNSv2/", "DynDNSv2/"]
+RUN dotnet restore "./DynDNSv2/DynDNSv2.csproj"
 COPY . .
 WORKDIR "/src/DynDNSv2"
 RUN dotnet build "./DynDNSv2.csproj" -c $BUILD_CONFIGURATION -o /app/build

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace DynDNSv2;
 
-internal class Program
+class Program
 {
     static void Main(string[] args) => Task.Run(AsyncMain).Wait();
 
