@@ -28,6 +28,11 @@ internal class Updater : BackgroundService
 
     private ILogger logger;
 
+    private HttpClientHandler _handler => new HttpClientHandler()
+    {
+        ServerCertificateCustomValidationCallback = delegate { return true; },
+    };
+    
     public Updater(ILogger<Updater> logger)
     {
 
@@ -124,7 +129,7 @@ internal class Updater : BackgroundService
             "http://icanhazip.com"
         };
 
-        using (var client = new HttpClient())
+        using (var client = new HttpClient(_handler))
         {
 
             foreach (var service in services)
@@ -174,7 +179,7 @@ internal class Updater : BackgroundService
     private async Task RunDnsUpdateAsync(IPAddress publicIp)
     {
 
-        using (var client = new HttpClient())
+        using (var client = new HttpClient(_handler))
         {
 
             client.DefaultRequestHeaders.Add("User-Agent", "Server");
